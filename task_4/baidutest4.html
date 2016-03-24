@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<style type="text/css">
+			#box{
+				width:400px;
+				height:200px;
+				background-color:#ccc;
+				position:absolute;
+				left:50%;
+				top: 50%;
+				margin-left:-200px;
+	  			margin-top:-100px;
+	  			overflow: hidden;
+	  			<!--超出的部分隐藏-->
+			} 
+			.circular{
+				position: absolute;
+				width:100px;
+				height: 100px;
+				border-radius: 50%;
+				background: #fc0;
+			}
+			#topcir1{
+				left:-50px;
+				top:-50px;
+			}
+			#topcir2{
+				right:-50px;
+				bottom:-50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div class="circular" id="topcir1"></div>
+			<div class="circular" id="topcir2"></div>
+		</div>
+	</body>
+</html>

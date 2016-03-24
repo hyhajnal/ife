@@ -1,0 +1,147 @@
+body{
+	margin: 0px;
+	background:#dedede;
+}
+#content_1,#content_2,#content_3,#content_4,#content_5{
+	margin:25px; 
+	margin-top:35px; 
+	padding: 20px;
+	background-color: white;
+	border-right: 3px #9f9f9f solid;
+	border-bottom: 3px #9f9f9f solid;
+}
+#header{
+	margin: 0px;
+	height:70px;
+	background:#333333;
+}
+#daohang{
+	float: right;
+	border:none;
+}
+#daohang li{
+	margin-top: 10px;
+	color: black;
+	float: left;
+	font-size:12px;
+	width:80px;
+}
+#pic{
+	margin-top: 16px;
+	margin-left: 30px; 
+}
+h3{
+	color:#666666;
+}
+h4{
+	font-size: 14px;
+	color:#666666;
+}
+p{
+	text-indent: 2em;
+	font-size: 16px;
+	line-height: 1.75em;
+	font-weight: 520;
+}
+#daohang span{
+	color:white;
+}
+#content_2 li{
+	list-style: none;
+}
+#pics{
+	list-style: none;
+}
+#pics img{
+	width: :229px;
+	height: 170px;
+}
+.litable{
+	margin-top: 25px;
+	padding:15px;
+	padding-top: 30px;
+	padding-bottom: 10px;
+	border:1px #dedede solid;
+	width: 230px;
+	height: 210px;
+	text-align: center;
+}
+ol{
+	line-height: 1.8em;
+}
+#biaoge{
+	width: 100%;
+	border:1px solid #cdcdcd;
+	font-size: 12px;
+}
+#bheader{
+	background-color: #333333;
+	height: 26px;
+	font-weight: bold;
+	color: white;
+}
+#biaoge tr,td{
+	border:1px solid #cdcdcd;
+	height: 25px;
+	padding-left: 5px;
+}
+#bbottom{
+	background-color: #cdcdcd;
+	font-weight: bold;
+}
+#last{
+	height:10px;
+	border-left:3px solid #cdcdcd;
+	padding-left: 8px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	font-weight: bold;
+	letter-spacing: 1px;
+}
+#fff{
+	margin-top: 20px;
+	margin-left: 265px;
+	font-size: 12px;
+	width:100%;
+}
+#w1{
+	color:#cdcdcd;
+	margin-left:100px;
+}
+#w2{
+	color:#cdcdcd;
+	margin-left:100px;
+}
+#s2{
+	margin-left:22px;
+}
+#s3{
+	margin-left:-2px;
+}
+#b1,#b2,#b3{
+	margin-left:65px;
+}
+#b4{
+	margin-left:30px;
+	vertical-align: top;
+}
+#sub1{
+	margin-left: -240px;
+	width: 96%;
+	height: 50px;
+	color:white;
+	background-color: #3355d0;
+	font-size: 16px;
+	font-weight: bold;
+	border-radius: 15px;
+}
+#low1{
+	margin: 0px;
+	height:70px;
+	background-color: #000;
+	color:white;
+	text-align: center;
+	padding-top:20px;
+	font-size: 13px; 
+	font-weight: bold;
+}

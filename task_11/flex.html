@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta content="yes" name="apple-mobile-web-app-capable">
+        <meta content="yes" name="apple-touch-fullscreen">
+        <meta content="telephone=no,email=no" name="format-detection">
+        <meta content="designWidth=750, desginUnit=6, columnCount=12, columnXUnit=7, gutterXUnit=3, edgeXUnit=4" name="grid" />
+        <script src="flexible.js"></script>
+        <script src="flexible_css.js"></script>
+        <title>task_11</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div id="container">
+            <header>
+                <a href="#"><img src="image/back.png"><h1>返回</h1></a>
+                <h1>这是标题</h1>
+            </header>
+            <nav>
+                <ul class="nav_ul">
+                    <li class="nav_li">导航</li>
+                    <li class="nav_li active">导航</li>
+                    <li class="nav_li">导航</li>
+                    <li class="nav_li">导航</li>
+                    <li class="nav_li">导航</li>
+                </ul>
+            </nav>
+            <div class="main_box">
+                <section class="class1">
+                    <img src="image/bear.png">
+                </section>
+                <section class="class2">
+                    <ul class="nav_ul">
+                        <li class="nav_li"><div class="circle"><img src="image/text.png"></div>标签</li>
+                        <li class="nav_li"><div class="circle"><img src="image/text.png"></div>标签</li>
+                        <li class="nav_li"><div class="circle"><img src="image/text.png"></div>标签</li>
+                        <li class="nav_li"><div class="circle"><img src="image/text.png"></div>标签</li>
+                        <li class="nav_li"><div class="circle"><img src="image/text.png"></div>标签</li>
+                    </ul>
+                </section>
+                <section class="class3">
+                    <ul class="nav_ul">
+                        <li class="nav_li"><img src="image/sub-1.png"><h2>分栏一</h2><h3>分栏小标题</h3></li>
+                        <li class="nav_li"><img src="image/sub-2.png"><h2>分栏二</h2><h3>分栏小标题</h3></li>
+                        <li class="nav_li san"><img src="image/sub-3.png"><h2>分栏三</h2><h3>分栏小标题</h3></li>
+                    </ul>
+                </section>
+                <div class="hr"></div>
+                <section class="class4">
+                    <h1 class="title">模块一</h1>
+                    <ul class="nav_ul">
+                        <li class="nav_li img_li"><img src="image/head.png"></li>
+                        <li class="nav_li text_li">
+                            <div class="text">这是文案</div>
+                            <div class="text">这是文案</div>
+                        </li>
+                        <li class="nav_li text_li">
+                            <div class="text">这是文案</div>
+                            <div class="text">这是文案</div>
+                        </li>
+                    </ul>
+                    <ul class="nav_ul">
+                        <li class="nav_li img_li"><img src="image/head.png"></li>
+                        <li class="nav_li text_li">
+                            <div class="text">这是文案</div>
+                            <div class="text">这是文案</div>
+                        </li>
+                        <li class="nav_li text_li">
+                            <div class="text">这是文案</div>
+                            <div class="text">这是文案</div>
+                        </li>
+                    </ul>
+                </section>
+                <div class="hr"></div>
+                <section class="class4">
+                    <h1 class="title">模块二</h1>
+                    <ul class="nav_ul">
+                        <li class="nav_li img_li"><img src="image/head.png"></li>
+                        <li class="nav_li text_li">
+                            <div class="text">这是文案</div>
+                            <div class="text">这是文案</div>
+                        </li>
+                        <li class="nav_li text_li">
+                            <div class="text">这是文案</div>
+                            <div class="text">这是文案</div>
+                        </li>
+                    </ul>
+                    <ul class="nav_ul">
+                        <li class="nav_li img_li"><img src="image/head.png"></li>
+                        <li class="nav_li text_li">
+                            <div class="text">这是文案</div>
+                            <div class="text">这是文案</div>
+                        </li>
+                        <li class="nav_li text_li">
+                            <div class="text">这是文案</div>
+                            <div class="text">这是文案</div>
+                        </li>
+                    </ul>
+                </section>
+                <div class="hr"></div>
+                <section class="class5">
+                    <ul>
+                        <li class="top"><img src="image/bear-1.png">                       
+                            <div>
+                                <p class="text1">这是文章标题字号为22的文章标题</p>
+                                <p class="text2">文章来源 6分钟前</p>
+                            </div>
+                        </li>
+                        <li ><img src="image/bear-1.png">                       
+                            <div>
+                                <p class="text1">这是文章标题字号为22的文章标题</p>
+                                <p class="text2">文章来源 6分钟前</p>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+                <section class="class6">
+                    <p class="text1">这是文章标题字号为22的文章标题</p>
+                    <ul class="nav_ul">
+                        <li class="nav_li"><img src="image/bear-1.png"></li>
+                        <li class="nav_li"><img src="image/bear-1.png"></li>
+                        <li class="nav_li"><img src="image/bear-1.png"></li>
+                    </ul>
+                    <p class="text2">文章来源 7分钟前</p>
+                </section>
+            </div>
+            <footer></footer>
+        </div>
+ 
+    </body>
+    <script src="jquery-1.12.0.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            var font=$(window).width()/1349*54+"px!important";
+           /* alert(font);*/
+            $("html").css("cssText","font-size:"+font);
+
+        });
+        window.onresize=function(){ location=location };
+    </script>
+</html>

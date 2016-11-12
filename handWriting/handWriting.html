@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>手写输入</title>
+</head>
+<body>
+	<canvas id="myCanvas" ></canvas>
+	<button id="send">写完了</button>
+	<p>结果：</p>
+	<div id="result"></div>
+	
+	<script src="jquery-1.6.4.min.js"></script>
+	<script>
+		var canvas, board,cvWidth,cvHeight;
+		//最后的轨迹串
+		var dataStr = '';
+		canvas = document.getElementById("myCanvas");
+
+		canvas.height = 300;
+		canvas.width = 300;
+
+		cvWidth = canvas.width;
+		cvHeight = canvas.height; 
+
+		board = canvas.getContext("2d");//获取绘图上下文
+
+		var mousePress = false;
+		var last = null;
+
+		function beginDraw(){
+			mousePress = true;
+		}
+
+		function drawing(e){
+			e.preventDefault();
+			if(!mousePress) return;
+			var xy = pos(e);
+			if(last != null){
+				board.beginPath();//开始绘图
+				board.moveTo(last.x, last.y);
+				board.lineTo(xy.x, xy.y);
+				board.stroke();//绘图结束
+			}
+			last = xy;
+		}
+
+		function endDraw(e){
+			mousePress = false;
+			e.preventDefault();
+			last = null;
+		}
+
+		function pos(e){
+			var x,y;
+			if(isTouch(e)){
+				x = e.touches[0].pageX;
+				y = e.touches[0].pageY;
+			}else{
+				x = e.offsetX + e.target.offsetLeft;
+				y = e.offsetY + e.target.offsetTop;
+			}
+			//console.log("x:" + x + "y:" + y );
+			dataStr = dataStr + x + ',' + y +',';
+			return {x:x, y:y};//返回一个点(Object)
+		}
+
+		function isTouch(e){
+			var type = e.type;
+			if(type.indexOf('touch') >= 0){
+				return true;
+			}else{
+				return false;
+			}
+		}
+
+		//绘制田字格
+		function drawBackground(){
+			board.strokeStyle = 'red';
+			board.lineWidth = 2;
+			board.beginPath();//开始绘图
+			board.rect(1, 1,cvWidth - 2,cvHeight - 2);
+			board.stroke();
+
+			board.lineWidth = 1;
+			board.setLineDash([5,5]);//虚线
+
+			//画"\"线
+			board.moveTo(0, 0);
+			board.lineTo(cvWidth, cvHeight);
+
+			//画"/"线
+			board.moveTo(0, cvHeight);
+			board.lineTo(cvWidth, 0);
+
+			//画"-"线
+			board.moveTo(0, cvHeight / 2);
+			board.lineTo(cvWidth, cvHeight / 2);
+
+			//画"|"线
+			board.moveTo(cvWidth / 2, 0);
+			board.lineTo(cvWidth / 2, cvHeight);
+
+			board.stroke();//绘图结束
+
+			//画笔重置
+			board.setLineDash([0, 0]);
+			board.strokeStyle = 'black';
+			board.lineWidth = 1;
+		}
+
+		drawBackground();
+
+		canvas.onmousedown = beginDraw;
+		canvas.onmousemove = drawing;
+		canvas.onmouseup = endDraw;
+		canvas.addEventListener('touchstart', beginDraw, false);
+		canvas.addEventListener('touchmove', drawing, false);
+		canvas.addEventListener('touchend', endDraw, false);
+
+
+
+
+		//识别手写字体
+		function analyse(dataObj){
+			$.ajax({
+				type:'POST',
+				url:'http://cors.itxti.net/api.hanvon.com/rt/ws/v1/hand/single?key=17206102-495d-4ddc-b23a-4cfa28b55d9e&code=83b798e7-cd10-4ce3-bd56-7b9e66ace93d',
+				contentType:'application/octet-stream',
+				data:dataObj,
+				dataType:'json',
+				success:function(data){
+					if(data.code == 0){
+						$('#result').html(data.result);
+					}else{
+						alert("字体解析错误");
+					}
+
+				},
+				error:function(){
+					alert("连接错误");
+				}
+
+			});
+		}
+
+		//当点击完成后发送分析
+		$('#send').click(function(){
+			dataStr = dataStr + '-1,0';
+			var dataObj = {
+				    "uid": "192.200.232.75",
+				    "type": "1",
+				    "data": dataStr
+				}
+			analyse(dataObj);
+		});
+	</script>
+</body>
+</html>

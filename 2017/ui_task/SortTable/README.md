@@ -1,6 +1,6 @@
 ## UI 之排序表格
 ### 在线 demo
-[demo](https://hyhajnal.github.io/ife/2017/SortTable/index.html/ "ui_sort_table") 
+[demo](https://hyhajnal.github.io/ife/2017/ui_task/SortTable/index.html "ui_sort_table") 
 ### 排序按钮切换样式
 通过 radio label 标签， 然后用 .radio:checked + .up 纯 css 控制单选效果。
 ``` css

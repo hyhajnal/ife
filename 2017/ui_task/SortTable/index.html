@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <div class="loading"></div>
+    <table id="sortTable">
+      <thead>
+        <tr>
+          <th><span title="name">姓名</span></th>
+          <th><span title="chinese">语文</span>
+            <input type="radio" name="sort_radio" id="radio1" class="radio" checked>
+            <label for="radio1" class="up"></label>
+            <input type="radio" name="sort_radio" id="radio2" class="radio" checked>
+            <label for="radio2" class="down"></label>
+          </th>
+          <th><span title="math">数学</span>
+            <input type="radio" name="sort_radio" id="radio3" class="radio" checked>
+            <label for="radio3" class="up"></label>
+            <input type="radio" name="sort_radio" id="radio4" class="radio" checked>
+            <label for="radio4" class="down"></label>
+          </th>
+          <th><span title="english">英语</span>
+            <input type="radio" name="sort_radio" id="radio5" class="radio" checked>
+            <label for="radio5" class="up"></label>
+            <input type="radio" name="sort_radio" id="radio6" class="radio" checked>
+            <label for="radio6" class="down"></label>
+          </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>小敏</td>
+          <td>79</td>
+          <td>46</td>
+          <td>80</td>
+        </tr>
+        <tr>
+          <td>小红</td>
+          <td>65</td>
+          <td>86</td>
+          <td>70</td>
+        </tr>
+        <tr>
+          <td>小方</td>
+          <td>69</td>
+          <td>76</td>
+          <td>90</td>
+        </tr>
+        <tr>
+          <td>小冬</td>
+          <td>83</td>
+          <td>92</td>
+          <td>54</td>
+        </tr>
+        <tr>
+          <td>小杨</td>
+          <td>45</td>
+          <td>62</td>
+          <td>74</td>
+        </tr>
+        <tr>
+          <td>小雨</td>
+          <td>93</td>
+          <td>52</td>
+          <td>78</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script src="./SortTable.js"></script>
+    <script>
+      var sortTable = new SortTable('sortTable');
+      sortTable.do();
+    </script>
+
+  </body>
+</html>

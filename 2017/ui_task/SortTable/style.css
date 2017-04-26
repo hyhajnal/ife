@@ -1,0 +1,74 @@
+html, body, td, th, tr{
+  padding: 0; margin: 0;
+}
+table {
+  width: 600px;
+  margin: auto;
+  border: 1px solid #ccc;
+  position: absolute;
+  left: 0; top: 20%; right: 0;
+  border-collapse:collapse;
+}
+table,th, td {
+  text-align: center;
+  border:1px solid #98bf21;
+}
+tr:nth-child(odd){
+  background-color:#EAF2D3;
+}
+th {
+  position: relative;
+  background-color:#A7C942;
+  color:#ffffff;
+}
+
+.loading td{
+  position:relative;
+  animation:fadeInDown 1s;
+  -webkit-animation:fadeInDown 1s; /* Safari 和 Chrome */
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    /*transform: translate3d(0, -100%, 0);*/
+  }
+
+  to {
+    opacity: 1;
+    /*transform: none;*/
+  }
+}
+
+label {
+  position: absolute;
+  width: 0;
+  height: 0;
+  right: 15px;
+  border-width: 7px;
+  transition: .3s;
+  transform: scale(0.9);
+}
+label:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.up {
+  top: -5px;
+  border-style: solid;
+  border-color: transparent transparent #555 transparent;
+}
+.down {
+  bottom: -5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+.radio:checked + .up{
+  border-color: transparent transparent #fff transparent;
+}
+.radio:checked + .down{
+  border-color: #fff transparent transparent transparent;
+}
+.radio{
+  display: none;
+}

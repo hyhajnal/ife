@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>body</title>
+  <style>
+	  /* your code here */
+	  #select{
+	  	width:200px;
+	  }
+	  .result{
+		border:1px solid #000;
+	  	width:100%;
+	  	height:30px;
+	  	line-height: 30px;
+	  }
+	  ul{
+	  	padding: 0;
+	  	margin: 0;
+	  }
+	  li{
+	  	list-style: none;
+	  	border: 1px solid #000;
+	  	height:30px;
+	  	width:100%;
+	  	line-height: 30px;
+	  	cursor:pointer;
+	  }
+	  .hide{
+	  	display: none;
+	  }
+  </style>
+</head>
+<body>
+  <div id="select">
+  </div>
+
+  <script>
+
+  	var $ = function(str){
+  		return document.querySelector(str)
+  	}
+
+	function select(options){
+	  // your code here
+	  var documentFragment = document.createDocumentFragment()
+	  var ul = document.createElement('ul')
+	  	  ul.className = 'hide'
+	  var result = document.createElement('div')
+	  	  result.className = 'result'
+	  options.data.forEach(function(v){
+	  	var li = document.createElement('li')
+	  	li.innerHTML = v
+	  	ul.appendChild(li)
+	  })
+
+	  ul.onclick = function(ev){
+  		ev.stopPropagation()
+　　　　var ev = ev || window.event;
+　　　　var target = ev.target || ev.srcElement;
+　　　　if(target.nodeName.toLowerCase() == 'li'){
+　 　　　　 result.innerHTML = ev.target.innerHTML
+  			ul.className = ' hide'
+  			options.onChange(ev.target.innerHTML)
+　　　　}
+　　}
+
+
+	  documentFragment.appendChild(result)
+	  documentFragment.appendChild(ul)
+	  $(options.srcNode).appendChild(documentFragment)
+	  $(options.srcNode).addEventListener('click', function(){
+	  		ul.className = ''
+	  }, false)
+	  
+	}
+	
+	// eg
+	select({
+	  srcNode: '#select',
+	  data: ['北京','上海','杭州','南京','东北'],
+	  onChange: function(ev){
+	    console.log(ev); 
+	  }
+	})
+  </script>
+</body>
+</html>

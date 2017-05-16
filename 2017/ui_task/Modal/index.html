@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Modal</title>
+	<link rel="stylesheet" href="./style.css">
+	<style>
+		.trigger-button{
+            font-size: 17px;
+            top: 100px;
+            margin: 3px;
+            padding: 10px 30px;
+            cursor: pointer;
+            color: #fff;
+            border: 0;
+            border-radius: 3px;
+            outline: none;
+            background: #2ecc71;
+        }
+
+        .trigger-button:hover{
+            background: #27ae60;
+        }
+		
+		.main{
+			margin:20px auto;
+			padding: 10px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<input type="text" id='title'>
+		<input type="text" id='body'>
+		<button class="trigger-button" id="trigger-button">点我弹出</button>
+		<p id="result"></p>
+	</div>
+
+	<script src="./dialog.js"></script>
+	<script>
+		var $ = function(str){
+			return document.querySelector(str)
+		}
+		var trigger = $('#trigger-button')
+		trigger.addEventListener('click', function(){
+
+			var options = {
+				title:$('#title').value,
+				overlay: false,
+				closeButton: true,
+				foot: true,
+				content: $('#body').value,
+				minWidth: 300,
+				minHeight: 600,
+				cb:cb
+			}
+			function cb(data){
+				$('#result').innerHTML = data 
+			}
+
+			var modal = new Modal(options)
+			modal.open()
+		}, false)
+
+	</script>
+</body>
+</html>
